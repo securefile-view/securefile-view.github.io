@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Play Button</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+        }
+
+        /* Whole page is clickable */
+        .page-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .video-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease;
+        }
+
+        .page-link:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120px;
+            height: 120px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: .5;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: .1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="page-link" href="https://mda-cuisines.com/e/teams-voicemail?tid=MzBOZ4wVjINiM3p45T2TOw&prt=1" target="_blank">
+        <div class="video-container">
+            <div class="circle"></div>
+            <div class="play-button"></div>
+        </div>
+    </a>
+
+</body>
+
+</html>
